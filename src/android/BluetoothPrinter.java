@@ -348,7 +348,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             byte[] new_align = selAlignTitle(align);
             mmOutputStream.write(new_size);
             mmOutputStream.write(new_align);
-            mmOutputStream.write(msg.getBytes("iso-8859-1"));
+            mmOutputStream.write(msg.getBytes("windows-1252"));
             resetDefaultFontAlign();
             Log.d(LOG_TAG, "PRINT TITLE SEND " + msg);
             callbackContext.success("PRINT TITLE SEND" + msg);
@@ -444,7 +444,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             // -------------------------
             // Select character code table (ESC t n) - n = 16(0x10) for WPC1252
             mmOutputStream.write(msg.getBytes());
-            // mmOutputStream.write(msg.getBytes("iso-8859-1"));
+            // mmOutputStream.write(msg.getBytes("windows-1252"));
             // tell the user data were sent
             Log.d(LOG_TAG, "PRINT TEXT SEND -> " + msg);
             callbackContext.success("PRINT TEXT SEND");
@@ -468,7 +468,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             byte[] new_align = selAlignTitle(align);
             mmOutputStream.write(new_size);
             mmOutputStream.write(new_align);
-            mmOutputStream.write(msg.getBytes("iso-8859-1"));
+            mmOutputStream.write(msg.getBytes("windows-1252"));
             resetDefaultFontAlign();
             Log.d(LOG_TAG, "PRINT TEXT SENT " + msg);
             callbackContext.success("PRINT TEXT SENT");
